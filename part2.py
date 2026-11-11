@@ -61,7 +61,7 @@ def main():
         tau = k / 10
         tp, fp, tn, fn = confusion(p_te >= tau, yte)
         m = metrics(tp, fp, tn, fn)
-        rows.append([f"{tau:.1f}", tp, fp, tn, fn, m["recall"], m["fpr"]])
+        rows.append([f"{tau:.4f}", tp, fp, tn, fn, m["recall"], m["fpr"]])
     write_csv("part2_thresholds.csv", ["tau", "tp", "fp", "tn", "fn", "tpr", "fpr"], rows)
 
     # 2.7 KNN with 5-fold cross-validation
